@@ -1,253 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Hobby: Photography</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: linear-gradient(90deg, #0f4c75, #3282b8);
-            color: #ffffff;
-            padding: 30px 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #1b262c;
-            padding: 12px 0;
-            text-align: center;
-        }
-        nav a {
-            color: #bbe1fa;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 1.1em;
-            padding: 10px 15px;
-            border-radius: 6px;
-            display: inline-block;
-            transition: background-color 0.3s, color 0.3s, transform 0.2s;
-        }
-        nav a.active-tab {
-            background-color: #3282b8;
-            color: #ffffff;
-            transform: scale(1.05);
-        }
-        nav a:hover {
-            background-color: #0f4c75;
-            color: #ffffff;
-        }
-        section {
-            display: none;
-            padding: 15px;
-            background-color: #222;
-            border-radius: 10px;
-            margin: 10px auto;
-            width: 90%;
-            max-width: 800px;
-        }
-        section.active {
-            display: block;
-        }
-        footer {
-            background: linear-gradient(90deg, #0f4c75, #3282b8);
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-        }
-        .validation-buttons {
-            margin-top: 10px;
-        }
-        .validation-buttons a {
-            display: inline-block;
-            background-color: #1b262c;
-            color: #bbe1fa;
-            text-decoration: none;
-            padding: 8px 12px;
-            margin: 5px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .validation-buttons a:hover {
-            background-color: #3282b8;
-            color: #ffffff;
-        }
-        .validation-buttons a:active {
-            background-color: #0f4c75;
-            color: #ffffff;
-        }
-        figure {
-            text-align: center;
-            margin-top: 15px;
-        }
-        figure img {
-            max-width: 60%;
-            height: auto;
-            border: 3px solid #3282b8;
-            border-radius: 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            background-color: #333;
-            color: #f5f5f5;
-        }
-        table, th, td {
-            border: 1px solid #3282b8;
-        }
-        th {
-            background-color: #0f4c75;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-        form {
-            margin-top: 20px;
-        }
-        form label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #3282b8;
-            background-color: #1b262c;
-            color: #e0e0e0;
-        }
-        input[type="submit"] {
-            background-color: #3282b8;
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        input[type="submit"]:hover {
-            background-color: #0f4c75;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobby: Photography</title>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #0f4c75, #3282b8);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #1b262c;
+      padding: 12px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #bbe1fa;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: 10px 15px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    }
+    nav a.active-tab {
+      background-color: #3282b8;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+    nav a:hover {
+      background-color: #0f4c75;
+      color: #ffffff;
+    }
+    section {
+      display: none;
+      padding: 15px;
+      background-color: #222;
+      border-radius: 10px;
+      margin: 10px auto;
+      width: 90%;
+      max-width: 800px;
+    }
+    section.active {
+      display: block;
+    }
+    footer {
+      background: linear-gradient(90deg, #0f4c75, #3282b8);
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .validation-buttons {
+      margin-top: 10px;
+    }
+    .validation-buttons a {
+      display: inline-block;
+      background-color: #1b262c;
+      color: #bbe1fa;
+      text-decoration: none;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .validation-buttons a:hover {
+      background-color: #3282b8;
+      color: #ffffff;
+    }
+    figure {
+      text-align: center;
+      margin-top: 15px;
+    }
+    figure img {
+      max-width: 60%;
+      height: auto;
+      border: 3px solid #3282b8;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background-color: #333;
+      color: #f5f5f5;
+    }
+    table, th, td {
+      border: 1px solid #3282b8;
+    }
+    th {
+      background-color: #0f4c75;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    form {
+      margin-top: 20px;
+    }
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #3282b8;
+      background-color: #1b262c;
+      color: #e0e0e0;
+    }
+    input[type="submit"] {
+      background-color: #3282b8;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    input[type="submit"]:hover {
+      background-color: #0f4c75;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>My Hobby: Photography</h1>
+  <h1>Photography</h1>
 </header>
 
 <nav>
-    <a id="tab-home" onclick="showSection('home', this)" class="active-tab">Home 📸</a>
-    <a id="tab-about" onclick="showSection('about', this)">About 👤</a>
-    <a id="tab-best-times" onclick="showSection('best-times', this)">Best Times ⏰</a>
-    <a id="tab-locations" onclick="showSection('locations', this)">Locations 🌍</a>
-    <a id="tab-how" onclick="showSection('how', this)">How 🛠️</a>
-    <a id="tab-why" onclick="showSection('why', this)">Why ❓</a>
-    <a id="tab-contact" onclick="showSection('contact', this)">Contact ✉️</a>
-    <a id="tab-ai-prompts" onclick="showSection('ai-prompts', this)">AI Prompts 🤖</a>
+  <a id="tab-home" onclick="showSection('home', this)" class="active-tab">Home 📸</a>
+  <a id="tab-about" onclick="showSection('about', this)">About 👤</a>
+  <a id="tab-best-times" onclick="showSection('best-times', this)">Best Times ⏰</a>
+  <a id="tab-locations" onclick="showSection('locations', this)">Locations 🌍</a>
+  <a id="tab-how" onclick="showSection('how', this)">How 🛠️</a>
+  <a id="tab-why" onclick="showSection('why', this)">Why ❓</a>
+  <a id="tab-contact" onclick="showSection('contact', this)">Contact ✉️</a>
+  <a id="tab-ai-prompts" onclick="showSection('ai-prompts', this)">AI Prompts 🤖</a>
 </nav>
 
 <section id="home" class="active">
-    <h2>What is Photography?</h2>
-    <p>Photography is a hobby where you use a camera to capture moments and scenes. People enjoy it because it helps them save memories, be creative, and see things in a new way.</p>
-    <p>There are lots of types of photography. You can take portraits of people, shoot landscapes of nature, capture wildlife, or even do close-ups of tiny details.</p>
-    <figure>
-        <img src="images/photo1.jpg" alt="Photography Gear">
-        <figcaption>Professional camera gear setup</figcaption>
-    </figure>
-    <p><em>Prompt used: "high resolution photo of professional photography equipment on a wooden table, soft lighting"</em></p>
+  <h2>What is Photography?</h2>
+  <p>Photography is a hobby where you use a camera to capture moments and scenes. People enjoy it because it helps them save memories, be creative, and see things in a new way.</p>
+  <p>There are lots of types of photography. You can take portraits of people, shoot landscapes of nature, capture wildlife, or even do close-ups of tiny details.</p>
+  <table>
+    <tr><th>Photography Type</th><th>Description</th></tr>
+    <tr><td>Portrait</td><td>Captures people, their expressions, and personalities.</td></tr>
+    <tr><td>Landscape</td><td>Focuses on natural scenes like mountains, lakes, and sunsets.</td></tr>
+    <tr><td>Macro</td><td>Close-up photography that captures small details and subjects.</td></tr>
+  </table>
+  <figure>
+    <img src="images/photo1.jpg" alt="Photography Gear">
+    <figcaption>Professional camera gear setup</figcaption>
+  </figure>
+  <p><em>Prompt used: "high resolution photo of professional photography equipment on a wooden table, soft lighting"</em></p>
 </section>
 
 <section id="about">
-    <h2>Who Practices Photography?</h2>
-    <p>Photography is for everyone! Some people do it just for fun, snapping pictures of pets or vacations. Others make it a career!</p>
-    <p>Photojournalists, influencers, and pros use photography to tell stories and share their vision.</p>
-    <figure>
-        <img src="images/photo2.jpg" alt="Photographer at work">
-        <figcaption>Photographer capturing wildlife at sunrise</figcaption>
-    </figure>
-    <p><em>Prompt used: "photographer kneeling at sunrise photographing wildlife, wide angle, cinematic"</em></p>
+  <h2>Who Practices Photography?</h2>
+  <p>Photography is enjoyed by hobbyists, professionals, and artists worldwide. From capturing memories to creating artistic masterpieces, it's a versatile field.</p>
+  <p>Photographers can specialize in various niches like fashion, wildlife, sports, and travel photography.</p>
+  <table>
+    <tr><th>Role</th><th>Description</th></tr>
+    <tr><td>Hobbyist</td><td>Practices photography for fun and creativity.</td></tr>
+    <tr><td>Professional</td><td>Works in photography as a career, offering services.</td></tr>
+    <tr><td>Journalist</td><td>Uses photography to document real-life events and news.</td></tr>
+  </table>
+  <figure>
+    <img src="images/photo2.jpg" alt="Photographer at work">
+    <figcaption>Photographer capturing wildlife at sunrise</figcaption>
+  </figure>
+  <p><em>Prompt used: "photographer kneeling at sunrise photographing wildlife, wide angle, cinematic"</em></p>
 </section>
 
 <section id="best-times">
-    <h2>When is the Best Time?</h2>
-    <p>The best time to take photos is during the golden hour—after sunrise or before sunset. The light is soft and warm, giving a nice look to your photos.</p>
-    <p>Blue hour is also great, right before sunrise or after sunset. It gives a cooler, moodier tone.</p>
-    <figure>
-        <img src="images/photo3.jpg" alt="Golden hour landscape">
-        <figcaption>Serene golden hour over the mountains</figcaption>
-    </figure>
-    <p><em>Prompt used: "golden hour landscape over mountain range with orange sky, highly detailed"</em></p>
+  <h2>When is the Best Time?</h2>
+  <p>The golden hour is a favorite for many photographers due to its warm and soft lighting. Early morning and late afternoon provide optimal conditions.</p>
+  <p>Night photography can capture stunning long-exposure shots of stars, city lights, and more.</p>
+  <table>
+    <tr><th>Time of Day</th><th>Best For</th></tr>
+    <tr><td>Golden Hour</td><td>Portraits, landscapes</td></tr>
+    <tr><td>Blue Hour</td><td>Cityscapes, moody shots</td></tr>
+    <tr><td>Night</td><td>Astrophotography, long exposure</td></tr>
+  </table>
+  <figure>
+    <img src="images/photo3.jpg" alt="Golden hour landscape">
+    <figcaption>Serene golden hour over the mountains</figcaption>
+  </figure>
+  <p><em>Prompt used: "golden hour landscape over mountain range with orange sky, highly detailed"</em></p>
 </section>
 
 <section id="locations">
-    <h2>Where to Take Photos?</h2>
-    <p>You can take photos almost anywhere! Parks, beaches, downtown areas, or even your own backyard.</p>
-    <p>Urban areas have cool architecture; nature gives you landscapes and wildlife.</p>
-    <figure>
-        <img src="images/photo4.jpg" alt="Street Photography">
-        <figcaption>Vibrant city street photography at dusk</figcaption>
-    </figure>
-    <p><em>Prompt used: "street photography of urban area at dusk with neon lights, cinematic composition"</em></p>
+  <h2>Where to Take Photos?</h2>
+  <p>There’s inspiration everywhere! Popular locations include nature parks, urban areas, and even your own backyard. Each offers unique opportunities.</p>
+  <p>Travel photography exposes you to different cultures, landscapes, and architectural marvels.</p>
+  <table>
+    <tr><th>Location</th><th>Photo Opportunities</th></tr>
+    <tr><td>Urban</td><td>Architecture, street photography</td></tr>
+    <tr><td>Nature Parks</td><td>Wildlife, landscapes</td></tr>
+    <tr><td>Coastlines</td><td>Sunsets, seascapes</td></tr>
+  </table>
+  <figure>
+    <img src="images/photo4.jpg" alt="Street Photography">
+    <figcaption>Vibrant city street photography at dusk</figcaption>
+  </figure>
+  <p><em>Prompt used: "street photography of urban area at dusk with neon lights, cinematic composition"</em></p>
 </section>
 
 <section id="how">
-    <h2>How to Start?</h2>
-    <p>Start with what you have—even your phone works! Focus on composition and light first.</p>
-    <p>Then, learn manual settings like ISO, aperture, and shutter speed for more creative control.</p>
-    <figure>
-        <img src="images/photo5.jpg" alt="Photographer adjusting camera settings">
-        <figcaption>Learning manual camera settings outdoors</figcaption>
-    </figure>
-    <p><em>Prompt used: "young photographer adjusting camera settings outdoors, shallow depth of field"</em></p>
+  <h2>How to Start?</h2>
+  <p>Starting is easy! Use any camera you have, even your phone. Focus on learning composition techniques and lighting basics.</p>
+  <p>Explore editing tools like Lightroom or Photoshop to enhance your images post-capture.</p>
+  <table>
+    <tr><th>Step</th><th>Action</th></tr>
+    <tr><td>1</td><td>Choose a camera</td></tr>
+    <tr><td>2</td><td>Learn basic photography rules</td></tr>
+    <tr><td>3</td><td>Practice and edit your shots</td></tr>
+  </table>
+  <figure>
+    <img src="images/photo5.jpg" alt="Photographer adjusting camera settings">
+    <figcaption>Learning manual camera settings outdoors</figcaption>
+  </figure>
+  <p><em>Prompt used: "young photographer adjusting camera settings outdoors, shallow depth of field"</em></p>
 </section>
 
 <section id="why">
-    <h2>Why Photography?</h2>
-    <p>Photography lets you tell stories and express yourself. You can capture moments that mean something to you and others.</p>
-    <p>It’s creative, relaxing, and a skill you can always improve on!</p>
-    <figure>
-        <img src="images/photo6.jpg" alt="Memory album">
-        <figcaption>Curated photo album preserving life memories</figcaption>
-    </figure>
-    <p><em>Prompt used: "open photo album on a table, vintage style, warm lighting"</em></p>
+  <h2>Why Photography?</h2>
+  <p>Photography allows you to capture moments and create art. It's a therapeutic hobby that can turn into a rewarding career.</p>
+  <p>It helps you develop patience, observation skills, and attention to detail.</p>
+  <table>
+    <tr><th>Reason</th><th>Benefit</th></tr>
+    <tr><td>Creativity</td><td>Express yourself through images</td></tr>
+    <tr><td>Memories</td><td>Preserve special moments</td></tr>
+    <tr><td>Community</td><td>Connect with other photographers</td></tr>
+  </table>
+  <figure>
+    <img src="images/photo6.jpg" alt="Memory album">
+    <figcaption>Curated photo album preserving life memories</figcaption>
+  </figure>
+  <p><em>Prompt used: "open photo album on a table, vintage style, warm lighting"</em></p>
 </section>
 
 <section id="contact">
-    <h2>Contact</h2>
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <input type="submit" value="Send Message">
-    </form>
+  <h2>Contact</h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    <input type="submit" value="Send Message">
+  </form>
 </section>
 
 <section id="ai-prompts">
-    <h2>AI Prompts Used</h2>
-    <h3>Image Prompts</h3>
-    <table>
-        <tr><th>Image</th><th>Prompt</th></tr>
-        <tr><td>Photography Gear</td><td>high resolution photo of professional photography equipment on a wooden table, soft lighting</td></tr>
-        <tr><td>Photographer at Work</td><td>photographer kneeling at sunrise photographing wildlife, wide angle, cinematic</td></tr>
-        <tr><td>Golden Hour Landscape</td><td>golden hour landscape over mountain range with orange sky, highly detailed</td></tr>
-        <tr><td>Street Photography</td><td>street photography of urban area at dusk with neon lights, cinematic composition</td></tr>
-        <tr><td>Manual Settings</td><td>young photographer adjusting camera settings outdoors, shallow depth of field</td></tr>
-        <tr><td>Memory Album</td><td>open photo album on a table, vintage style, warm lighting</td></tr>
-    </table>
+  <h2>AI Prompts Used</h2>
+
+  <h3>Image Prompts</h3>
+  <table>
+    <tr><th>Image</th><th>Prompt</th></tr>
+    <tr><td>Photography Gear</td><td>high resolution photo of professional photography equipment on a wooden table, soft lighting</td></tr>
+    <tr><td>Photographer at Work</td><td>photographer kneeling at sunrise photographing wildlife, wide angle, cinematic</td></tr>
+    <tr><td>Golden Hour Landscape</td><td>golden hour landscape over mountain range with orange sky, highly detailed</td></tr>
+    <tr><td>Street Photography</td><td>street photography of urban area at dusk with neon lights, cinematic composition</td></tr>
+    <tr><td>Manual Settings</td><td>young photographer adjusting camera settings outdoors, shallow depth of field</td></tr>
+    <tr><td>Memory Album</td><td>open photo album on a table, vintage style, warm lighting</td></tr>
+  </table>
+
+  <h3>Text Content Prompts</h3>
+  <table>
+    <tr><th>Section</th><th>Prompt</th><th>AI Model</th></tr>
+    <tr><td>What is Photography?</td><td>Explain photography in simple terms as a hobby.</td><td>ChatGPT-4</td></tr>
+    <tr><td>Who Practices Photography?</td><td>Describe the different people who practice photography, casual and friendly.</td><td>ChatGPT-4</td></tr>
+    <tr><td>Best Times for Photography?</td><td>List the best times of day to take photos and why, suitable for beginners.</td><td>ChatGPT-4</td></tr>
+    <tr><td>Where to Practice Photography?</td><td>Give ideas on where beginners can practice photography.</td><td>ChatGPT-4</td></tr>
+    <tr><td>How to Get Started?</td><td>Explain how someone can start photography with simple gear.</td><td>ChatGPT-4</td></tr>
+    <tr><td>Why Choose Photography?</td><td>Explain why photography is a rewarding hobby.</td><td>ChatGPT-4</td></tr>
+  </table>
 </section>
 
 <footer>
@@ -270,15 +311,14 @@
 </footer>
 
 <script>
-    function showSection(id, element) {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav a');
-        sections.forEach(s => s.classList.remove('active'));
-        navLinks.forEach(a => a.classList.remove('active-tab'));
-
-        document.getElementById(id).classList.add('active');
-        element.classList.add('active-tab');
-    }
+  function showSection(id, element) {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+    sections.forEach(s => s.classList.remove('active'));
+    navLinks.forEach(a => a.classList.remove('active-tab'));
+    document.getElementById(id).classList.add('active');
+    element.classList.add('active-tab');
+  }
 </script>
 
 </body>
