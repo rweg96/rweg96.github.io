@@ -1,0 +1,46 @@
+﻿item_name,price,image_url,category
+Apple,0.5,images/apple.jpg,Fruit
+Banana,0.3,images/banana.jpg,Fruit
+Carrot,0.4,images/carrot.jpg,Produce
+Chicken Breast,5,images/chicken_breast.jpg,Meat
+Ground Beef,4.5,images/ground_beef.jpg,Meat
+Salmon Fillet,8.5,images/salmon_fillet.jpg,Seafood
+Milk,3,images/milk.jpg,Dairy
+Cheddar Cheese,4,images/cheddar_cheese.jpg,Dairy
+Yogurt,1.2,images/yogurt.jpg,Dairy
+Bread Loaf,2.5,images/bread_loaf.jpg,Bakery
+Croissant,1.8,images/croissant.jpg,Bakery
+Muffin,1.5,images/muffin.jpg,Bakery
+Flour,2.2,images/flour.jpg,Baking
+Sugar,2,images/sugar.jpg,Baking
+Peanut Butter,3.5,images/peanut_butter.jpg,Pantry
+Frozen Pizza,4,images/frozen_pizza.jpg,Frozen
+Frozen Vegetables,2.5,images/frozen_vegetables.jpg,Frozen
+Ice Cream,3.7,images/ice_cream.jpg,Frozen
+Soda,5,images/soda.jpg,Beverages
+Coffee,6,images/coffee.jpg,Beverages
+Water,4,images/water.jpg,Beverages
+Chips,1.5,images/chips.jpg,Snacks
+Popcorn,2,images/popcorn.jpg,Snacks
+Chocolate Bar,1.2,images/chocolate_bar.jpg,Snacks
+Toothpaste,2.5,images/toothpaste.jpg,Personal Care
+Shampoo,4,images/shampoo.jpg,Personal Care
+Soap,1,images/soap.jpg,Personal Care
+Laundry Detergent,6,images/laundry_detergent.jpg,Household
+Dish Soap,2.5,images/dish_soap.jpg,Household
+Paper Towels,5,images/paper_towels.jpg,Household
+Dog Food,12,images/dog_food.jpg,Pet Supplies
+Cat Food,10,images/cat_food.jpg,Pet Supplies
+Bird Seed,8,images/bird_seed.jpg,Pet Supplies
+Ham,4,images/ham.jpg,Meat
+Turkey,4.2,images/turkey.jpg,Meat
+Salami,3.8,images/salami.jpg,Meat
+Ketchup,2,images/ketchup.jpg,Condiments
+Mayonnaise,3,images/mayonnaise.jpg,Condiments
+BBQ Sauce,2.5,images/bbq_sauce.jpg,Condiments
+Canned Beans,1,images/canned_beans.jpg,Canned Goods
+Canned Corn,1,images/canned_corn.jpg,Canned Goods
+Canned Soup,1.5,images/canned_soup.jpg,Canned Goods
+Pasta,1.2,images/pasta.jpg,Pantry
+Rice,2,images/rice.jpg,Pantry
+Quinoa,3,images/quinoa.jpg,Pantry
