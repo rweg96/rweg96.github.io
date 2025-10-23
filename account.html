@@ -18,7 +18,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <!-- scripts.js will auto-insert "Logged in as..." here -->
+          <!-- scripts.js will auto-insert the user status + top Logout -->
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="catalog.html">Catalog</a></li>
           <li class="nav-item"><a class="nav-link" href="lists.html">Lists</a></li>
@@ -41,9 +41,11 @@
       <div class="col-md-8 col-lg-7">
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="mb-0">Account Overview</h2>
-          <a href="account-edit.html" class="btn btn-success">Edit Account</a>
+          <!-- Hide this Edit button unless logged in -->
+          <a href="account-edit.html" class="btn btn-success" data-auth="require">Edit Account</a>
         </div>
 
+        <!-- Overview Card -->
         <div id="accountOverview" class="card shadow-sm">
           <div class="card-body">
             <div class="row g-3">
@@ -68,8 +70,13 @@
             <hr class="my-4">
 
             <div class="d-flex flex-column flex-md-row gap-2">
-              <a href="account-edit.html" class="btn btn-outline-success flex-fill">Edit</a>
-              <button id="ov-delete" class="btn btn-outline-danger flex-fill">Delete Account</button>
+              <!-- Show Create only when logged out -->
+              <a href="account-edit.html" class="btn btn-success flex-fill" data-auth="guest">Create Account</a>
+              <a href="login.html" class="btn btn-outline-success flex-fill" data-auth="guest">Log In</a>
+
+              <!-- Only show when logged in -->
+              <button id="ov-delete" class="btn btn-outline-danger flex-fill" data-auth="require">Delete Account</button>
+              <button id="ov-logout" class="btn btn-outline-secondary flex-fill" data-auth="require">Log out</button>
             </div>
             <p class="text-muted small mt-2 mb-0">
               Deleting your account removes your saved profile from this device.
@@ -77,10 +84,14 @@
           </div>
         </div>
 
+        <!-- No Account / Logged-out View -->
         <div id="noAccount" class="alert alert-light border mt-4 d-none">
           <h6 class="mb-1">No account found on this device.</h6>
-          <p class="mb-2">Create one now to save your details for faster checkout.</p>
-          <a href="account-edit.html" class="btn btn-success">Create Account</a>
+          <p class="mb-2">Create one now or log in to your saved account.</p>
+          <div class="d-flex gap-2">
+            <a href="account-edit.html" class="btn btn-success flex-fill">Create Account</a>
+            <a href="login.html" class="btn btn-outline-success flex-fill">Log In</a>
+          </div>
         </div>
       </div>
     </div>
@@ -94,42 +105,54 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="js/scripts.js" defer></script>
 
-  <!-- Tiny inline script to render overview from localStorage -->
+  <!-- Inline session + user check -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      try {
-        const u = JSON.parse(localStorage.getItem('bb_user')) || null;
-        const has = !!u;
+      const getUser = () => {
+        try { return JSON.parse(localStorage.getItem('bb_user')) || null; }
+        catch { return null; }
+      };
+      const isSessionActive = () => {
+        try { return !!sessionStorage.getItem('bb_session'); }
+        catch { return false; }
+      };
 
-        const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val || '—'; };
-        if (has) {
-          set('ov-name', u.fullName);
-          set('ov-email', u.email);
-          set('ov-address', u.address);
-          // mask billing a bit
-          const masked = u.billing ? (u.billing.replace(/\s+/g,'').slice(-4).padStart(12, '•')) : '';
-          set('ov-billing', masked ? `**** **** **** ${masked.slice(-4)}` : '');
-          document.getElementById('noAccount')?.classList.add('d-none');
-          document.getElementById('accountOverview')?.classList.remove('d-none');
-        } else {
-          document.getElementById('accountOverview')?.classList.add('d-none');
-          document.getElementById('noAccount')?.classList.remove('d-none');
-        }
+      const u = getUser();
+      const loggedIn = !!(u && isSessionActive());
+      const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val && String(val).trim() ? val : '—'; };
 
-        // delete
-        const del = document.getElementById('ov-delete');
-        if (del) {
-          del.addEventListener('click', () => {
-            if (!confirm('Delete your account? This cannot be undone.')) return;
-            localStorage.removeItem('bb_user');
-            // optionally clear cart or other user-local data here
-            location.reload();
-          });
-        }
-      } catch (_) {
-        // if parsing fails, show empty state
+      if (loggedIn) {
+        set('ov-name', u.fullName);
+        set('ov-email', u.email);
+        set('ov-address', u.address);
+        const last4 = (u.billing || '').replace(/\D+/g,'').slice(-4);
+        set('ov-billing', last4 ? `**** **** **** ${last4}` : '—');
+        document.getElementById('noAccount')?.classList.add('d-none');
+        document.getElementById('accountOverview')?.classList.remove('d-none');
+      } else {
+        ['ov-name','ov-email','ov-address','ov-billing'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = '—'; });
         document.getElementById('accountOverview')?.classList.add('d-none');
         document.getElementById('noAccount')?.classList.remove('d-none');
+      }
+
+      // Delete account
+      const del = document.getElementById('ov-delete');
+      if (del) {
+        del.addEventListener('click', () => {
+          if (!confirm('Delete your account? This cannot be undone.')) return;
+          localStorage.removeItem('bb_user');
+          try { sessionStorage.removeItem('bb_session'); } catch {}
+          location.reload();
+        });
+      }
+
+      // Logout
+      const logoutBtn = document.getElementById('ov-logout');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+          try { sessionStorage.removeItem('bb_session'); } catch {}
+          location.reload();
+        });
       }
     });
   </script>
